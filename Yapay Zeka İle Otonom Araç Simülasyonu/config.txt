@@ -1,0 +1,137 @@
+[DefaultSpeciesSet]
+# Türler arası uyumluluk sınırı (yüksek değer daha az tür anlamına gelir).
+compatibility_threshold = 2.0
+
+[NEAT]
+# En yüksek fitness değerine göre değerlendirme yapılır.
+fitness_criterion     = max
+# Eğitim tamamlanmadan önce ulaşılması gereken fitness değeri.
+fitness_threshold     = 100000000
+# Popülasyondaki birey sayısı (30 birey).
+pop_size              = 30
+# Tüm bireyler tükenirse popülasyon sıfırlanır.
+reset_on_extinction   = True
+
+[DefaultReproduction]
+# Her nesilde en iyi 3 birey korunur.
+elitism            = 3
+# Popülasyonun en iyi %20’si bir sonraki nesile geçer.
+survival_threshold = 0.2
+
+[DefaultStagnation]
+# Tür fitness değerlendirmesi için en yüksek fitness değeri kullanılır.
+species_fitness_func = max
+# Bir tür 20 nesil boyunca gelişme göstermezse sonlandırılır.
+max_stagnation       = 20
+# Her nesilde en iyi 2 birey korunur.
+species_elitism      = 2
+
+[DefaultGenome]
+# Düğüm aktivasyon seçenekleri
+# Varsayılan aktivasyon fonksiyonu "tanh".
+activation_default      = tanh
+# Aktivasyon fonksiyonunun mutasyon oranı %1.
+activation_mutate_rate  = 0.01
+# Kullanılacak aktivasyon fonksiyonları (yalnızca tanh burada).
+activation_options      = tanh
+
+# Düğüm toplama (birleştirme) seçenekleri
+# Varsayılan toplama işlemi "sum" (toplama).
+aggregation_default     = sum
+# Toplama yönteminin mutasyon oranı %1.
+aggregation_mutate_rate = 0.01
+# Kullanılabilir toplama yöntemleri (yalnızca sum).
+aggregation_options     = sum
+
+# Düğüm bias (sapma) seçenekleri
+# Başlangıç bias değeri ortalaması 0.
+bias_init_mean          = 0.0
+# Başlangıç bias değeri standart sapması 1.
+bias_init_stdev         = 1.0
+# Bias değeri maksimum 30 olabilir.
+bias_max_value          = 30.0
+# Bias değeri minimum -30 olabilir.
+bias_min_value          = -30.0
+# Bias mutasyon genişliği.
+bias_mutate_power       = 0.5
+# Bias mutasyon oranı %70.
+bias_mutate_rate        = 0.7
+# Bias tamamen rastgele değere geçme oranı %10.
+bias_replace_rate       = 0.1
+
+# Genom uyumluluk seçenekleri
+# Uyuşmayan genlerin uyumluluk katsayısı.
+compatibility_disjoint_coefficient = 1.0
+# Ağırlık farklarının uyumluluk katsayısı.
+compatibility_weight_coefficient   = 0.5
+
+# Bağlantı ekleme/silme oranları
+# Bağlantı ekleme olasılığı %50.
+conn_add_prob           = 0.5
+# Bağlantı silme olasılığı %50.
+conn_delete_prob        = 0.5
+
+# Bağlantı etkinleştirme seçenekleri
+# Varsayılan olarak bağlantılar etkin başlar.
+enabled_default         = True
+# Bağlantı etkinlik durumu mutasyon oranı %1.
+enabled_mutate_rate     = 0.01
+
+# Beslemeli ağ kullanılacak (geri besleme yok).
+feed_forward            = True
+# İlk bağlantılar tüm düğümleri kapsar (tam bağlantı).
+initial_connection      = full
+
+# Düğüm ekleme/silme oranları
+# Düğüm ekleme olasılığı %20.
+node_add_prob           = 0.2
+# Düğüm silme olasılığı %20.
+node_delete_prob        = 0.2
+
+# Ağ parametreleri
+# Başlangıçta gizli düğüm sayısı (0).
+num_hidden              = 0
+# Ağın giriş düğümü sayısı (5).
+num_inputs              = 5
+# Ağın çıkış düğümü sayısı (4).
+num_outputs             = 4
+
+# Düğüm tepki seçenekleri
+# Başlangıç tepki değeri ortalaması 1.
+response_init_mean      = 1.0
+# Başlangıç tepki değeri standart sapması 0.
+response_init_stdev     = 0.0
+# Tepki değerinin maksimum sınırı 30.
+response_max_value      = 30.0
+# Tepki değerinin minimum sınırı -30.
+response_min_value      = -30.0
+# Tepki mutasyon genişliği (sıfır değişim).
+response_mutate_power   = 0.0
+# Tepki mutasyon oranı (değişim yok).
+response_mutate_rate    = 0.0
+# Tepki tamamen rastgele değişme oranı (değişim yok).
+response_replace_rate   = 0.0
+
+# Bağlantı ağırlık seçenekleri
+# Başlangıç ağırlık değeri ortalaması 0.
+weight_init_mean        = 0.0
+# Başlangıç ağırlık değeri standart sapması 1.
+weight_init_stdev       = 1.0
+# Ağırlık değerinin maksimum sınırı 30.
+weight_max_value        = 30
+# Ağırlık değerinin minimum sınırı -30.
+weight_min_value        = -30
+# Ağırlık mutasyon genişliği.
+weight_mutate_power     = 0.5
+# Ağırlık mutasyon oranı %80.
+weight_mutate_rate      = 0.8
+# Ağırlık tamamen rastgele değere geçme oranı %10.
+weight_replace_rate     = 0.1
+
+
+# Terim Açıklamaları
+# Bias (Sapma): Bir nöronun yanıt verme eşiğini değiştiren ek bir değer. Ağın belirli durumlarda daha hızlı veya farklı tepkiler vermesine yardımcı olur.
+# Mutasyon: Yapay genetik algoritmalarda çeşitliliği sağlamak için nöron ağı veya genler üzerinde rastgele değişiklikler yapılmasıdır.
+# Fitness: Genetik algoritmalarda her bireyin veya ağın performansını ölçen değer. Yüksek fitness, daha başarılı bir birey veya ağa işaret eder.
+# Elitizm: Her nesilde en iyi bireylerin seçilip bir sonraki nesile doğrudan aktarılması. Bu, genetik çeşitlilik kaybını azaltarak başarıyı artırır.
+# Ağırlık (Weight): Nöron bağlantılarının güç derecesi. Yüksek ağırlıklar, belirli bir girdinin daha güçlü bir şekilde etkilenmesine neden olur.
